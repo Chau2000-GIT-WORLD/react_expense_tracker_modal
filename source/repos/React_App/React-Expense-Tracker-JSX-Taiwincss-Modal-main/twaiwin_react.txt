@@ -1,0 +1,17 @@
+Nhìn vào file ExpenseManager cũ bạn vừa gửi,
+ bạn đang dùng JavaScript thuần kết hợp Tailwind CSS:Cách cũ bạn đang làm:
+ Bạn dùng biến let isFiltered500k = false để làm State thủ công. 
+Khi click, bạn phải dùng lệnh JavaScript document.querySelectorAll đi rà soát từng thẻ HTML,
+ rồi tự tay thêm/bớt class hidden và flex của Tailwind để ẩn hiện.
+Cách mới trong React: Bạn không cần đi tìm từng thẻ HTML để ép class nữa. 
+Bạn để React tự động xử lý dựa trên dữ liệu mảng initialExpenses 
+bằng cách viết điều kiện trực tiếp:
+
+Tailwind CSS (Chỉ lo cái ĐẸP - Giao diện): Tailwind chỉ là một thư viện cung cấp các từ khóa (utility classes) như hidden, 
+flex, bg-teal-50. Bản thân Tailwind không có não để ghi nhớ xem người dùng đang click hay không click, 
+cũng không biết số 4.369.000 ₫ từ đâu ra. Nó chỉ làm một việc duy nhất: Khi bạn đắp class nào vào, nó sẽ vẽ giao diện theo class đó.JavaScript / React (Lo phần NÃO - Logic & Dữ liệu): State (hoặc biến isFiltered500k trong file cũ của bạn) là công cụ của JavaScript/React. Nó đóng vai trò ghi nhớ trạng thái hiện tại (đang bật hay đang tắt bộ lọc)
+
+
+
+
+Cách đồng bộ dữ liệu State vào 3 cột giao diệnBạn tìm đến đoạn mã hiển thị danh sách (nằm dưới cụm KPI) trong file ExpenseManager.jsx và thay bằng đoạn code duyệt dữ liệu tự động theo danh mục này:.

@@ -1,0 +1,10 @@
+Thầy hỏi: "Tại sao em không dùng style.display = 'none' mà lại dùng classList.add('hidden')?"]
+ Bạn trả lời: Dạ thưa thầy, vì dự án có sử dụng Tailwind CSS, các class tiện ích như flex rất mạnh.
+ Nếu dùng thuộc tính style thủ công dễ bị xung đột hoặc bị đè CSS. Việc dùng class hidden và flex của chính Tailwind giúp đồng bộ tuyệt đối với framework
+ và đảm bảo chạy ổn định trên môi trường build của Vite ạ.
+Thầy hỏi: "Đoạn code .replace(/[^0-9]/g, '') dùng để làm gì?"
+👉 Bạn trả lời: Dạ, vì số tiền trên giao diện đang ở dạng chuỗi có dấu chấm và ký hiệu tiền tệ (Ví dụ: "3.500.000 ₫"),
+ em dùng biểu thức chính quy (Regex) này để loại bỏ hết các ký tự chữ, chỉ giữ lại các ký số để chuyển thành số nguyên parseInt, từ đó mới so sánh lớn hơn 500.000 VNĐ được ạ.
+Thầy hỏi: "Làm sao bộ lọc này chạy được đồng thời cả 3 cột?"
+👉 Bạn trả lời: Dạ, vì em đã đồng bộ class expense-item cho tất cả các khoản chi ở cả 3 cột,
+ lệnh querySelectorAll('.expense-item') sẽ gom toàn bộ chúng vào một danh sách để xử lý vòng lặp cùng một lúc ạ.

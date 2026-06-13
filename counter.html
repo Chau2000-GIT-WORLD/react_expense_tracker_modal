@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bộ đếm (Counter)</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #f3f4f6;
+      }
+      .counter {
+        text-align: center;
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      }
+      #count {
+        font-size: 84px;
+        font-weight: 700;
+        margin: 8px 0 18px;
+        width: 220px;
+        text-align: center;
+      }
+      .controls {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+      button {
+        padding: 10px 18px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background: #fff;
+        cursor: pointer;
+      }
+      button:active { transform: translateY(1px); }
+    </style>
+  </head>
+  <body>
+    <div class="counter">
+      <h1>Bộ đếm</h1>
+      <div id="count">0</div>
+      <div class="controls">
+        <button id="decrease">Giảm</button>
+        <button id="increase">Tăng</button>
+      </div>
+    </div>
+
+    <script>
+      // Biến count và cập nhật hiển thị bằng innerText
+      let count = 0;
+      const el = document.getElementById('count');
+      const inc = document.getElementById('increase');
+      const dec = document.getElementById('decrease');
+
+      function render() {
+        el.innerText = count;
+        if (count > 0) {
+          el.style.color = 'green';
+        } else if (count < 0) {
+          el.style.color = 'red';
+        } else {
+          el.style.color = '#111';
+        }
+      }
+
+      inc.addEventListener('click', () => { count += 1; render(); });
+      dec.addEventListener('click', () => { count -= 1; render(); });
+
+      // initial render
+      render();
+    </script>
+  </body>
+</html>
